@@ -18,7 +18,7 @@ class ServerCommand{
         }
     }
 
-    fun ledoff() {
+    fun ledOff() {
         GlobalScope.launch(Dispatchers.IO) {
             val data = client.get<String>("https://ms0.newtonbox.ru/set/house/device1/led/off")
             Log.i("https://ms0.newtonbox.ru/set/house/device1/led/on Simple case ", data)
