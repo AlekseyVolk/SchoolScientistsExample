@@ -1,5 +1,6 @@
 package com.example.schoolscientistsexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         myToast.show()
     }
 
-   fun countMe (view: View) {
+    fun countMe (view: View) {
 
        var count: Int
 
@@ -38,5 +39,30 @@ class MainActivity : AppCompatActivity() {
         count++
         // Display the new value in the text view.
         textView.text = count.toString();
+    }
+
+    fun randomMe (view: View) {
+
+        // Create an Intent to start the second activity
+        val randomIntent = Intent(this, SecondActivity::class.java)
+
+        var count: Int
+
+        try {
+            // Get the value of the text view.
+            val countString = textView.text.toString()
+            // Convert value to a number and increment it
+            count = Integer.parseInt(countString)
+        }
+        catch(e: NumberFormatException)
+        {
+            count = 0
+        }
+
+        // Add the count to the extras for the Intent.
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+
+        // Start the new activity.
+        startActivity(randomIntent)
     }
 }
