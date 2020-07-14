@@ -2,10 +2,11 @@ package com.example.schoolscientistsexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.google.gson.JsonParser
+
 
 class ExampleThirdActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class ExampleThirdActivity : AppCompatActivity() {
         val gson = Gson()
         val arrayDevicesType = object : TypeToken<ArrayList<ExampleDevice>>() {}.type
 
-        var devices: ArrayList<ExampleDevice> = gson.fromJson(jsonList, arrayDevicesType)
+        var devices: ArrayList<ExampleDevice> = gson.fromJson(JsonParser().parse(jsonList).getAsJsonObject().get("channel_list"), arrayDevicesType)
         devices.forEachIndexed  { idx, dev -> println("> Item ${idx}:\n${dev}") }
 
         listView = findViewById<ListView>(R.id.deviceList)

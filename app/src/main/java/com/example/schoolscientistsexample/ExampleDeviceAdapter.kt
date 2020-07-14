@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 
-class ExampleDeviceAdapter(var context: Context, var devices: ArrayList<ExampleDevice>): BaseAdapter() {
+class ExampleDeviceAdapter(var context: Context, var devices: List<ExampleDevice>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
         var devName: TextView
