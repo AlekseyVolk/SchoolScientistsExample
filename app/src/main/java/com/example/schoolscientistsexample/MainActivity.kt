@@ -11,8 +11,9 @@ import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
 
+    var t = ServerCommandExample()
 
-    var t = ServerCommand()
+    var tAndrey = ServerCommandAndrey()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,10 +72,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ledOn(view: View){
-        t.ledOn()
+        val str =  t.ledOn()
+        textView.text = str
     }
 
     fun ledOff(view: View){
         t.ledOff()
+    }
+
+    fun andreyExample(view: View){
+        val str = tAndrey.createOrder(1)
+
+        textView.text = str
+
+        val myToast = Toast.makeText(this, str, Toast.LENGTH_SHORT)
+        myToast.show()
     }
 }
