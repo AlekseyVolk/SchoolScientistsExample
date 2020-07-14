@@ -71,12 +71,12 @@ class ExampleMainActivity : AppCompatActivity() {
     }
 
     fun ledOn(view: View){
-        val str = "LedOn " + t.ledOn()
+        val str = "LedOn " + t.ledOn("house/device0/led")
         textView.text = str
     }
 
     fun ledOff(view: View){
-        val str = "LedOff " + t.ledOff()
+        val str = "LedOff " + t.ledOff("house/device0/led")
         textView.text = str
     }
 

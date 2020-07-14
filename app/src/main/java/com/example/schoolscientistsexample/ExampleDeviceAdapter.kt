@@ -28,7 +28,7 @@ class ExampleDeviceAdapter(var context: Context, var devices: ArrayList<ExampleD
         var viewHolder: ViewHolder
         if (convertView == null) {
             var layout = LayoutInflater.from(context)
-            view = layout.inflate(R.layout.activity_example_third, parent, false)
+            view = layout.inflate(R.layout.list_item, parent, false)
             viewHolder = ViewHolder(view)
             view!!.tag = viewHolder
         } else {
@@ -37,18 +37,30 @@ class ExampleDeviceAdapter(var context: Context, var devices: ArrayList<ExampleD
         }
 
         var device: ExampleDevice = getItem(position) as ExampleDevice
-        viewHolder.devName .text = device.getName()
-        /*
-        viewHolder.onButton.setOnClickListener {
-            seleccion.visibility = View.GONE
-            mapa.visibility = View.VISIBLE
+        viewHolder.devName.text = device.getName()
+
+        if(!device.isManage())
+        {
+            viewHolder.onButton.isEnabled = false
+            viewHolder.offButton.isEnabled = false
         }
 
-        viewHolder.websitebutton.setOnClickListener {
-            seleccion.visibility = View.GONE
-            website.visibility = View.VISIBLE
+        viewHolder.onButton.setOnClickListener {
+            if(device.isManage())
+            {
+                var t = ServerCommandExample()
+                t.ledOn(device.getName())
+            }
         }
-        */
+
+        viewHolder.offButton.setOnClickListener {
+            if(device.isManage())
+            {
+                var t = ServerCommandExample()
+                t.ledOff(device.getName())
+            }
+        }
+
         return view as View
     }
 

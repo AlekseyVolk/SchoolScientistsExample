@@ -1,9 +1,11 @@
 package com.example.schoolscientistsexample
 
+import com.google.gson.annotations.SerializedName
+
 class ExampleDevice (
-    private var type : Boolean,
-    private var dataType: Boolean,
-    private var name: String
+    @SerializedName("type") private var type : Boolean,
+    @SerializedName("data_type") private var dataType: String,
+    @SerializedName("name") private var name: String
 ){
     override fun toString(): String {
         return "Category [type: ${this.type}, dataType: ${this.dataType}, name: ${this.name}]"
@@ -11,5 +13,9 @@ class ExampleDevice (
 
     fun getName() :String{
         return name
+    }
+
+    fun isManage() : Boolean{
+        return dataType == "b"
     }
 }
