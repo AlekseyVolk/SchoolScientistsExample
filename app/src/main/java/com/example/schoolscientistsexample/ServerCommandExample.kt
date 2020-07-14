@@ -40,4 +40,34 @@ class ServerCommandExample{
     fun ledOff() : String {
         return runBlocking { ledOffBody() }
     }
+
+    private suspend fun deviceListBody() : String {
+        return "[{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device1/temperature\"}, \n" +
+                "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device0/temperature\"}, \n" +
+                "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device1/humidity\"}, \n" +
+                "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device0/humidity\"}, \n" +
+                "{\"type\": false, \"data_type\": \"b\", \"name\": \"house/device1/statusled\"}, \n" +
+                "{\"type\": false, \"data_type\": \"b\", \"name\": \"house/device0/statusled\"}, \n" +
+                "{\"type\": true, \"data_type\": \"b\", \"name\": \"house/device1/led\"}, \n" +
+                "{\"type\": true, \"data_type\": \"b\", \"name\": \"house/device0/led\"}]"
+
+        try {
+            val res = client.get<String>(" https://ms0.newtonbox.ru/list/")
+            Log.i(" https://ms0.newtonbox.ru/list/ Simple case ", res)
+            return res
+        } catch (th: Throwable) {
+            return "[{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device1/temperature\"}, \n" +
+                    "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device0/temperature\"}, \n" +
+                    "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device1/humidity\"}, \n" +
+                    "{\"type\": false, \"data_type\": \"d\", \"name\": \"house/device0/humidity\"}, \n" +
+                    "{\"type\": false, \"data_type\": \"b\", \"name\": \"house/device1/statusled\"}, \n" +
+                    "{\"type\": false, \"data_type\": \"b\", \"name\": \"house/device0/statusled\"}, \n" +
+                    "{\"type\": true, \"data_type\": \"b\", \"name\": \"house/device1/led\"}, \n" +
+                    "{\"type\": true, \"data_type\": \"b\", \"name\": \"house/device0/led\"}]"
+        }
+    }
+
+    fun deviceList() : String {
+        return runBlocking { deviceListBody() }
+    }
 }

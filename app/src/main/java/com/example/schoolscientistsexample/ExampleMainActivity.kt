@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.NumberFormatException
 
@@ -76,5 +78,10 @@ class ExampleMainActivity : AppCompatActivity() {
     fun ledOff(view: View){
         val str = "LedOff " + t.ledOff()
         textView.text = str
+    }
+
+    fun viewDeviceList(view: View){
+        val intent = Intent(this@ExampleMainActivity, ExampleThirdActivity::class.java)
+        startActivity(intent)
     }
 }
