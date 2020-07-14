@@ -2,10 +2,10 @@ package com.example.schoolscientistsexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_second.*
+import kotlinx.android.synthetic.main.activity_example_second.*
 import java.util.*
 
-class SecondActivity : AppCompatActivity() {
+class ExampleSecondActivity : AppCompatActivity() {
 
     companion object {
         const val TOTAL_COUNT = "total_count"
@@ -13,7 +13,7 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_example_second)
         showRandomNumber()
     }
 
