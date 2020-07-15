@@ -20,7 +20,12 @@ class MichaelTMainActivity : AppCompatActivity() {
     }
 
     fun userInfoGet(view: View){
-        val json = t.userInfoGet(editTextUserId.text.toString())
+        var userId : String = editTextUserId.text.toString()
+
+        if( userId.isEmpty())
+            userId = "5"
+
+        val json = t.userInfoGet(userId)
 
         val gson = Gson()
         val michaelTUserType = object : TypeToken<MichaelTUserInfo>() {}.type
@@ -35,7 +40,16 @@ class MichaelTMainActivity : AppCompatActivity() {
 
     // открыть окно с примерами для Михаила Трубина
     fun michaelTBookListActivity(view: View) {
+
         val intent = Intent(this, MichaelTSecondActivity::class.java)
+
+        var userId : String = editTextUserId.text.toString()
+
+        if( userId.isEmpty())
+            userId = "5"
+
+        intent.putExtra(MichaelTSecondActivity.USER_ID, userId)
+
         startActivity(intent)
     }
 }
