@@ -8,3 +8,20 @@ class MichaelTUserInfo (
         @SerializedName("position") private var position: String,
         @SerializedName("education") private var education: String
     )
+{
+    fun getId() :Int{
+        return id
+    }
+
+    fun getName() :String{
+        return name
+    }
+
+    fun getPosition() :String{
+        return position
+    }
+
+    fun getEducation() :String{
+        return education
+    }
+}

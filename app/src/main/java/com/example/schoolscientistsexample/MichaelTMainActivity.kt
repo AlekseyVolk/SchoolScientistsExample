@@ -26,6 +26,9 @@ class MichaelTMainActivity : AppCompatActivity() {
 
         var userInfo: MichaelTUserInfo = gson.fromJson(JsonParser().parse(json).getAsJsonObject().get("object"), michaelTUserType)
 
-        textViewUserId.text = json
+        textViewUserId.text = userInfo.getId().toString()
+        textViewUserName.text = userInfo.getName()
+        textViewUserPosition.text = userInfo.getPosition()
+        textViewUserEducation.text = userInfo.getEducation()
     }
 }
