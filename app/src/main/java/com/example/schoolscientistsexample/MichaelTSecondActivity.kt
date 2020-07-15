@@ -12,7 +12,10 @@ class MichaelTSecondActivity : AppCompatActivity() {
     companion object {
         const val USER_ID = "5"
     }
-    var t = ServerCommandMichaelT()
+
+    private var t = ServerCommandMichaelT()
+
+    private lateinit var listView : ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +29,9 @@ class MichaelTSecondActivity : AppCompatActivity() {
         var books: ArrayList<MichaelTUserBook> = gson.fromJson(JsonParser().parse(jsonList).getAsJsonObject().get("user_list"), arrayBookType)
         // выведим в консоль список который мы получили
         books.forEachIndexed  { idx, dev -> println("> Item ${idx}:\n${dev}") }
+
+        listView = findViewById<ListView>(R.id.michaelTBookList)
+
+        listView.adapter = MichaelTUserBookAdapter(this, books)
     }
 }

@@ -5,21 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Button
 import android.widget.TextView
 
 class MichaelTUserBookAdapter(var context: Context, var books: List<MichaelTUserBook>): BaseAdapter() {
 
     private class ViewHolder(row: View?) {
-        var name: TextView
-        var author: TextView
-        var dateStart: TextView
-        var dateEnd: TextView
+        var nameB: TextView
+        var authorB: TextView
+        var dateStartB: TextView
+        var dateEndB: TextView
         init {
-            this.name = row!!.findViewById(R.id.itemBookNameTextView) as TextView
-            this.author = row.findViewById(R.id.itemBookAuthorTextView) as TextView
-            this.dateStart = row.findViewById(R.id.itemBookDateStartTextView) as TextView
-            this.dateEnd = row.findViewById(R.id.itemBookDateEndTextView) as TextView
+            this.nameB = row!!.findViewById(R.id.itemBookNameTextView) as TextView
+            this.authorB = row.findViewById(R.id.itemBookAuthorTextView) as TextView
+            this.dateStartB = row.findViewById(R.id.itemBookDateStartTextView) as TextView
+            this.dateEndB = row.findViewById(R.id.itemBookDateEndTextView) as TextView
         }
     }
 
@@ -29,7 +28,7 @@ class MichaelTUserBookAdapter(var context: Context, var books: List<MichaelTUser
         var viewHolder: ViewHolder
         if (convertView == null) {
             var layout = LayoutInflater.from(context)
-            view = layout.inflate(R.layout.list_item, parent, false)
+            view = layout.inflate(R.layout.michael_t_book, parent, false)
             viewHolder = ViewHolder(view)
             view!!.tag = viewHolder
         } else {
@@ -38,10 +37,11 @@ class MichaelTUserBookAdapter(var context: Context, var books: List<MichaelTUser
         }
 
         var book: MichaelTUserBook = getItem(position) as MichaelTUserBook
-        viewHolder.name.text = book.getName()
-        viewHolder.author.text = book.getAuthor()
-        viewHolder.dateStart.text = book.getDateStart()
-        viewHolder.dateEnd.text = book.getDateEnd()
+
+        viewHolder.nameB.text = book.getName()
+        viewHolder.authorB.text = book.getAuthor()
+        viewHolder.dateStartB.text = book.getDateStart()
+        viewHolder.dateEndB.text = book.getDateEnd()
 
         return view as View
     }
