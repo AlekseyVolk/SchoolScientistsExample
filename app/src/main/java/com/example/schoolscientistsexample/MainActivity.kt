@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    // открыть окно с прилождением Андрея
     fun andreyExample(view: View){
         val str = tAndrey.createOrder(1)
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         myToast.show()
     }
 
+    // открыть окно с примерами
     fun example(view: View){
         val intent = Intent(this@MainActivity, ExampleMainActivity::class.java)
         startActivity(intent)

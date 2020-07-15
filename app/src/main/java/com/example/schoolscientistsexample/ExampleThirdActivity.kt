@@ -24,6 +24,7 @@ class ExampleThirdActivity : AppCompatActivity() {
         val arrayDevicesType = object : TypeToken<ArrayList<ExampleDevice>>() {}.type
 
         var devices: ArrayList<ExampleDevice> = gson.fromJson(JsonParser().parse(jsonList).getAsJsonObject().get("channel_list"), arrayDevicesType)
+        // выведим в консоль список который мы получили
         devices.forEachIndexed  { idx, dev -> println("> Item ${idx}:\n${dev}") }
 
         listView = findViewById<ListView>(R.id.deviceList)

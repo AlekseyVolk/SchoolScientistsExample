@@ -16,6 +16,6 @@ class ExampleDevice (
     }
 
     fun isManage() : Boolean{
-        return dataType == "b"
+        return type
     }
 }

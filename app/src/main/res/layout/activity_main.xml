@@ -10,14 +10,14 @@
         android:id="@+id/buttonAndrey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:background="@color/screenBackgroundAndrey"
         android:onClick="andreyExample"
         android:text="Andrey"
-        app:layout_constraintStart_toEndOf="@+id/buttonExample"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonExample" />
 
     <Button
         android:id="@+id/buttonExample"
