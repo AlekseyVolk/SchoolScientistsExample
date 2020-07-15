@@ -23,4 +23,20 @@ class ServerCommandMichaelT {
     fun userInfoGet(userId: String): String{
         return runBlocking { userInfoGetBody(userId) }
     }
+
+    private suspend fun userBookListBody(userId: String): String{
+        try{
+            var query = "https://ms3.newtonbox.ru/user_books/" + userId
+            val res = client.get<String>(query)
+            Log.i(query + " Simple case ", res)
+            return res
+        }
+        catch (th : Throwable) {
+            return "ОШИБКА"
+        }
+    }
+
+    fun userBookList(userId: String): String{
+        return runBlocking { userBookListBody(userId) }
+    }
 }
