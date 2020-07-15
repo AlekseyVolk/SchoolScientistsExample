@@ -1,5 +1,6 @@
 package com.example.schoolscientistsexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -30,5 +31,11 @@ class MichaelTMainActivity : AppCompatActivity() {
         textViewUserName.text = userInfo.getName()
         textViewUserPosition.text = userInfo.getPosition()
         textViewUserEducation.text = userInfo.getEducation()
+    }
+
+    // открыть окно с примерами для Михаила Трубина
+    fun michaelTBookListActivity(view: View) {
+        val intent = Intent(this, MichaelTSecondActivity::class.java)
+        startActivity(intent)
     }
 }
