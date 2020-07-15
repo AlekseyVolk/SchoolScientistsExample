@@ -7,6 +7,19 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/buttonMichaelI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/screenBackgroundMichaelI"
+        android:onClick="michaelIActivity"
+        android:text="Michael_I"
+        app:layout_constraintStart_toEndOf="@+id/buttonMichaelT"
+        app:layout_constraintTop_toBottomOf="@+id/buttonExample" />
+
+    <Button
         android:id="@+id/buttonAndrey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,8 +36,8 @@
         android:id="@+id/buttonMichaelT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:background="@color/screenBackgroundMichaelT"
         android:onClick="michaelTActivity"

@@ -37,4 +37,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, MichaelTMainActivity::class.java)
         startActivity(intent)
     }
+
+    // открыть окно с примерами для Михаила Исаев
+    fun michaelIActivity(view: View) {
+        val intent = Intent(this@MainActivity, MichaelIMainActivity::class.java)
+        startActivity(intent)
+    }
 }
