@@ -13,6 +13,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
+        android:onClick="scopeGet"
         android:text="Получить счет"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonGetScope" />
 
     <TextView
-        android:id="@+id/textViewTeamScoupe"
+        android:id="@+id/textViewTeam1Scoupe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -50,7 +51,7 @@
         android:layout_marginTop="32dp"
         android:text="TextView"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewTeamScoupe"
+        app:layout_constraintStart_toEndOf="@+id/textViewTeam1Scoupe"
         app:layout_constraintTop_toBottomOf="@+id/textViewTeam2" />
 
     <TextView
