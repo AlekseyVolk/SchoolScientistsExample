@@ -3,8 +3,8 @@ package com.example.schoolscientistsexample
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_michael_i_main.*
-import kotlinx.android.synthetic.main.activity_michael_i_main.view.*
 
 class MichaelIMainActivity : AppCompatActivity() {
 
@@ -15,8 +15,12 @@ class MichaelIMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_michael_i_main)
     }
 
-    fun scopeGet(view: View){
-        var str = t.gameScoreGet()
-        textViewTeam2Scope.text = str
+    fun scoreGet(view: View){
+        var jsonStr = t.gameScoreGet()
+
+        val score: MichaelITeamScore = Gson().fromJson<MichaelITeamScore>(jsonStr, MichaelITeamScore::class.java)
+
+        textViewTeam1Score.text = score.team1ScoreGet().toString()
+        textViewTeam2Score.text = score.team2ScoreGet().toString()
     }
 }
