@@ -7,7 +7,6 @@ import android.view.View
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_michael_t_main.*
 
 class MichaelTMainActivity : AppCompatActivity() {
