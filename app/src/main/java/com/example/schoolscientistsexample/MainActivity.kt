@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // открыть окно с прилождением Андрея
-    fun andreyExample(view: View){
+    fun andreyExample(view: View) {
         val str = tAndrey.createOrder(1)
 
         textView.text = str
@@ -27,8 +27,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     // открыть окно с примерами
-    fun example(view: View){
+    fun example(view: View) {
         val intent = Intent(this@MainActivity, ExampleMainActivity::class.java)
+        startActivity(intent)
+    }
+
+    // открыть окно с примерами для Михаила Трубина
+    fun michaelTActivity(view: View) {
+        val intent = Intent(this@MainActivity, MichaelTMainActivity::class.java)
         startActivity(intent)
     }
 }

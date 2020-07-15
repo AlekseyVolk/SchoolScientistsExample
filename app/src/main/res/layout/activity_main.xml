@@ -20,6 +20,19 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonExample" />
 
     <Button
+        android:id="@+id/buttonMichaelT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/screenBackgroundMichaelT"
+        android:onClick="michaelTActivity"
+        android:text="Michael_T"
+        app:layout_constraintStart_toEndOf="@+id/buttonAndrey"
+        app:layout_constraintTop_toBottomOf="@+id/buttonExample" />
+
+    <Button
         android:id="@+id/buttonExample"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
