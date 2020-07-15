@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MichaelTMainActivity"></activity>
+        <activity android:name=".MichaelTSecondActivity"></activity>
+        <activity android:name=".MichaelTMainActivity" />
         <activity android:name=".ExampleThirdActivity" />
         <activity android:name=".ExampleMainActivity" />
         <activity android:name=".ExampleSecondActivity" />
