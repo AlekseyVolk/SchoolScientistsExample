@@ -9,10 +9,6 @@ import com.google.gson.reflect.TypeToken
 
 class MichaelTSecondActivity : AppCompatActivity() {
 
-    companion object {
-        const val USER_ID = "5"
-    }
-
     private var t = ServerCommandMichaelT()
 
     private lateinit var listView : ListView
@@ -20,8 +16,15 @@ class MichaelTSecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_michael_t_second)
+    }
 
-        val jsonList = t.userBookList(USER_ID)
+    override fun onResume(){
+        super.onResume()
+
+        var userId = "5"
+        userId = getIntent().getExtras()!!.get("MichaelTMainActivityTest").toString()
+
+        val jsonList = t.userBookList(userId)
 
         val gson = Gson()
         val arrayBookType = object : TypeToken<ArrayList<MichaelTUserBook>>() {}.type

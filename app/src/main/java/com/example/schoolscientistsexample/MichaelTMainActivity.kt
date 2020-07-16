@@ -47,7 +47,7 @@ class MichaelTMainActivity : AppCompatActivity() {
         if( userId.isEmpty())
             userId = "5"
 
-        intent.putExtra(MichaelTSecondActivity.USER_ID, userId)
+        intent.putExtra("MichaelTMainActivityTest", userId)
 
         startActivity(intent)
     }
